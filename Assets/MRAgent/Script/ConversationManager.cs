@@ -21,7 +21,7 @@ public class ConversationManager : Singleton<ConversationManager> {
     public GameObject Speeker;
     private string URL = "https://api.api.ai/v1/query?v=20150910";
     string str1 = "{\"query\":\"";
-    string str2 = "\",\"lang\":\"en\",\"sessionId\":\"123456789\"}";
+    string str2 = "\",\"lang\":\"ja\",\"sessionId\":\"123456789\"}";
     private string FollowMe_intent = "ComeHere";
     private const float RayCastLength = 10.0f;
 
@@ -44,7 +44,7 @@ public class ConversationManager : Singleton<ConversationManager> {
         byte[] bodyRaw = Encoding.UTF8.GetBytes(str1 + text + str2);
         request.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
         request.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
-        request.SetRequestHeader("Content-Type", "application/json");
+        request.SetRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
         //Step2 対話エージェントの設定
         request.SetRequestHeader("Authorization", "Bearer (set key here)");
