@@ -76,7 +76,7 @@ public class AgentControler : Singleton<AgentControler>, IInputClickHandler
             // 1秒毎にループします
             yield return new WaitForSeconds(1f);
 
-            if (agent.velocity.sqrMagnitude == 0 && YomeFocusAction.isYomeGazed)
+            if (agent.velocity.sqrMagnitude == 0 && FocusAction.isGazed)
             {
                 Vector3 heading = Agent.transform.position - Camera.main.transform.position;
                 heading.y = 0;

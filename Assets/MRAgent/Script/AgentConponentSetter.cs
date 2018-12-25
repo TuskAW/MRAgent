@@ -8,8 +8,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(OVRLipSyncContextMorphTarget))]
 [RequireComponent(typeof(OVRLipSyncContext))]
 [RequireComponent(typeof(NavMeshAgent))]
-[RequireComponent(typeof(YomeFocusAction))]
-[RequireComponent(typeof(TextToSpeechManager))]
+[RequireComponent(typeof(FocusAction))]
+[RequireComponent(typeof(TextToSpeech))]
 
 public class AgentConponentSetter : MonoBehaviour {
 
@@ -28,8 +28,8 @@ public class AgentConponentSetter : MonoBehaviour {
         gameObject.GetComponent<NavMeshAgent>().speed = 0.75f;
         AudioSource source = gameObject.GetComponent<AudioSource>();
         gameObject.GetComponent<OVRLipSyncContext>().audioSource = source;
-        gameObject.GetComponent<TextToSpeechManager>().AudioSource = source;
-        gameObject.GetComponent<TextToSpeechManager>().Voice = TextToSpeechVoice.Zira;
+        gameObject.GetComponent<TextToSpeech>().AudioSource = source;
+        gameObject.GetComponent<TextToSpeech>().Voice = TextToSpeechVoice.Zira;
 
         List <GameObject> allChildren = new List<GameObject>();
         GetChildren(gameObject, ref allChildren);

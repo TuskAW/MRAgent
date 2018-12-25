@@ -63,7 +63,7 @@ public class ConversationManager : Singleton<ConversationManager> {
 
         if (respose.result.metadata.intentName.Equals(FollowMe_intent))
         {
-            YomeControler.Instance.ComeHere();
+            AgentControler.Instance.ComeHere();
         }
 
     }
@@ -79,7 +79,7 @@ public class ConversationManager : Singleton<ConversationManager> {
             {
 
 
-                if (YomeFocusAction.isYomeGazed)
+                if (FocusAction.isGazed)
                 {
                     m_DictationRecognizer.Start();
                     XPic.gameObject.SetActive(false);
