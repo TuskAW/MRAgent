@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114739618049249158}
   - component: {fileID: 114716920965365676}
   m_Layer: 5
-  m_Name: YomeFukidashiUI
+  m_Name: AgentFukidashiUI
   m_TagString: YomeUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 222194323576296996}
   - component: {fileID: 114759128155002528}
   m_Layer: 5
-  m_Name: YomeText
+  m_Name: AgentText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 222220566013612924}
   - component: {fileID: 114567992919223906}
   m_Layer: 5
-  m_Name: YomeFukidasi
+  m_Name: AgentFukidasi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
