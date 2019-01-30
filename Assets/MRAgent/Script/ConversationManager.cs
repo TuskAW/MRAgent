@@ -25,14 +25,16 @@ public class ConversationManager : Singleton<ConversationManager> {
     private string FollowMe_intent = "ComeHere";
     private const float RayCastLength = 10.0f;
 
-    // Use this for initialization
-    void Start () {
-
-    }
-
     public void Initialize()
     {
         //Step1 音声認識の実装
+        m_DictationRecognizer = new DictationRecognizer();
+        m_DictationRecognizer.DictationResult += (text, confidence) =>
+        {
+            inputTextField.text = text;
+            StartCoroutine(GetReply(text));
+        };
+        m_DictationRecognizer.Start();
 
         XPic.gameObject.SetActive(false);
     }
@@ -47,7 +49,7 @@ public class ConversationManager : Singleton<ConversationManager> {
         request.SetRequestHeader("Content-Type", "application/json;charset=UTF-8");
 
         //Step2 対話エージェントの設定
-        request.SetRequestHeader("Authorization", "Bearer (set key here)");
+        request.SetRequestHeader("Authorization", "Bearer (api key))");
 
 
         yield return request.Send();
@@ -58,7 +60,9 @@ public class ConversationManager : Singleton<ConversationManager> {
 
         answerTextField.text = respose.result.fulfillment.speech;
 
-        //Step3 音声合成の実装
+        // Step3 音声合成の実装
+        // ※ハンズオン資料p.27及びQiita記事とはメソッド名が異なることに注意
+        textToSpeech.StartSpeaking(respose.result.fulfillment.speech.Replace("."," "));
         
 
         if (respose.result.metadata.intentName.Equals(FollowMe_intent))
