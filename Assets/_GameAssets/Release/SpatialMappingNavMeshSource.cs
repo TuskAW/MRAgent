@@ -18,6 +18,7 @@ public class SpatialMappingNavMeshSource : MonoBehaviour
 	{
 		surfaceObserver = gameObject.GetComponent<SpatialMappingObserver>();
 		surfaceObserver.SurfaceAdded += SurfaceObserver_SurfaceAdded;
+		surfaceObserver.SurfaceUpdated += SurfaceObserver_SurfaceUpdated;
 	}
 
 	private void SurfaceObserver_SurfaceAdded(object sender, DataEventArgs<SpatialMappingSource.SurfaceObject> e)
