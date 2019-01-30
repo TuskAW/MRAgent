@@ -1277,6 +1277,9 @@ GameObject:
   - component: {fileID: 375442244}
   - component: {fileID: 375442248}
   - component: {fileID: 375442246}
+  - component: {fileID: 375442247}
+  - component: {fileID: 375442245}
+  - component: {fileID: 375442249}
   m_Layer: 0
   m_Name: unitychan
   m_TagString: Untagged
@@ -1340,6 +1343,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &375442245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 375442241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0b97b38f2f1fd24185315141a6c6a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skinnedMeshRenderer: {fileID: 1657167828}
+  VisemeToBlendTargets: 000000000000000000000000000000000000000000000000000000000000000008000000000000000600000009000000070000000a00000008000000
+  enableVisemeSignals: 0
+  KeySendVisemeSignal: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  SmoothAmount: 100
 --- !u!114 &375442246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1353,6 +1372,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 375442248}
   voice: 4
+--- !u!114 &375442247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 375442241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43c520a9bad8a3489109c869f454576, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 375442248}
+  provider: 0
+  gain: 1
+  audioMute: 0
+  loopback: 108
+  debugVisemes: 100
+  showVisemes: 0
+  delayCompensate: 0
 --- !u!82 &375442248
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1433,6 +1471,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &375442249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 375442241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7aaad70d82e66748ba98b19c9306fce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lookAtObj: {fileID: 1514255070}
+  lookAtWeight: 1
+  bodyWeight: 0.4
+  headWeight: 1
+  eyesWeight: 0
+  clampWeight: 0.4
 --- !u!1 &391534660
 GameObject:
   m_ObjectHideFlags: 0
@@ -5104,6 +5159,11 @@ Transform:
   m_Father: {fileID: 773483181}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1514255070 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4000010560871102, guid: d379ed0a5618c9f479f58bd83a2d0ad3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1983419216}
 --- !u!1 &1523765088
 GameObject:
   m_ObjectHideFlags: 0
@@ -5293,6 +5353,8 @@ GameObject:
   - component: {fileID: 1573043479}
   - component: {fileID: 1573043477}
   - component: {fileID: 1573043480}
+  - component: {fileID: 1573043481}
+  - component: {fileID: 1573043482}
   m_Layer: 0
   m_Name: Singleton
   m_TagString: Untagged
@@ -5353,6 +5415,30 @@ MonoBehaviour:
   MicPic: {fileID: 1692369630}
   textToSpeech: {fileID: 375442246}
   Speeker: {fileID: 375442241}
+--- !u!114 &1573043481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1573043476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82aa5cb7a870de440baadff9083be41c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1573043482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1573043476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6ad2c451dec03408ce131e83ac25f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Tracked: {fileID: 0}
+  m_Size: {x: 80, y: 20, z: 80}
 --- !u!1 &1585376931
 GameObject:
   m_ObjectHideFlags: 0
@@ -5719,10 +5805,10 @@ SkinnedMeshRenderer:
   m_Bones: []
   m_BlendShapeWeights:
   - 0
+  - 20
   - 0
-  - 0
-  - 0
-  - 0
+  - 10
+  - 10
   - 0
   - 0
   - 0
@@ -5952,6 +6038,22 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1692369628}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &1697955634 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000010302963436, guid: 2ed75ffdf9031c94e8bce4b3d17b9928,
+    type: 2}
+  m_PrefabInternal: {fileID: 1396089241}
+--- !u!114 &1697955635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1697955634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 890e3510eaa882946a5fd9ee9ea46219, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1730924580
 GameObject:
   m_ObjectHideFlags: 0
