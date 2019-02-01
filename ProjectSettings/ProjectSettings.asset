@@ -569,7 +569,7 @@ PlayerSettings:
   metroCertificatePassword: 
   metroCertificateSubject: DefaultCompany
   metroCertificateIssuer: DefaultCompany
-  metroCertificateNotAfter: 8079608bacd7d501
+  metroCertificateNotAfter: 0021438322d8d501
   metroApplicationDescription: MRAgent
   wsaImages: {}
   metroTileShortName: 
